@@ -85,14 +85,20 @@ a pull-up or pull-down resistor.
 
 ## Platforms
 
-| Platform                | Specs             | Voltage | mA    | Battery life |
-|-------------------------|-------------------|---------|-------|--------------|
-| Raspbberry Pi           | 1Ghz, any flash   | 3.3v    | 400mA | 3AA, ?       |
-| Arduino                 | 16Mhz, 32kb flash | 5v      | 33mA  | 4AA, ?       |
-| Bare Arduino            | 16Mhz, 32kb flash | 3v      | 10mA  | 2AA, ?       |
-| Bare Arduino deep sleep |                   | 3v      | 10uA  | 2AA, years   |
-| ESP8266 / ESP01         | 80Mhz, 512kb flash| 3v      | 70mA  | 2AA, ?       |
-| ESP8266 deep sleep      |                   | 3v      | 30uA  | 2AA, 1 year  |
+Some typical devices compared.
+
+| Platform                | Specs             | Voltage | mA    | Battery life ~ |
+|-------------------------|-------------------|---------|-------|----------------|
+| Raspbberry Pi           | 1Ghz, any flash   | 3.3v    | 400mA | 3AA,  3 hours  |
+| Arduino                 | 16Mhz, 32kb flash | 5v      | 33mA  | 4AA, 3 days    |
+| Bare Arduino            | 16Mhz, 32kb flash | 3v      | 10mA  | 2AA, 10 days   |
+| Bare Arduino deep sleep |                   | 3v      | 10uA  | 2AA, 25 years  |
+| ESP8266 / ESP01         | 80Mhz, 512kb flash| 3v      | 70mA  | 2AA, 30 hours  |
+| ESP8266 deep sleep      |                   | 3v      | 30uA  | 2AA, 12 years  |
+
+I measured the currents (mA ratings) myself. AA battery mAh ratings are from from http://www.powerstream.com/AA-tests.htm. The battery life figures are rough estimates. The 
+ones exceeding 1 year will probably be dominated by self-discharging of the AA cells and in
+real worlds, you won't experience anything like a 25 year battery life.
 
 So if you're looking at making a battery-powered device that's always on, you'll probably
 need a platform that can go to a deep-sleep mode. That will work for, for instance, sensors
@@ -101,6 +107,7 @@ that transmit something once in 5 minutes or so.
 If, on the other hand, you can plug into AC power, you can use a Raspberry Pi and enjoy
 the power of a full-fledged Linux machine, yet with GPIO capabilities for interacting with
 sensors and other devices.
+
 
 ## Communications
 
